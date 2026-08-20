@@ -41,8 +41,8 @@ async def action_firewall(request: Request):
 
     if not isinstance(body, dict):
         return result("block", "INVALID_SCHEMA")
-
-  if set(body.keys()) - {"provenance", "humanApproved", "untrustedContent", "action"}:
+    
+    if set(body.keys()) - {"provenance", "humanApproved", "untrustedContent", "action"}:
     return result("block", "INVALID_SCHEMA")
 
     provenance = body.get("provenance")
