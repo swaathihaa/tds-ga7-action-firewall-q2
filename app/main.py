@@ -43,7 +43,7 @@ async def action_firewall(request: Request):
         return result("block", "INVALID_SCHEMA")
     
     if set(body.keys()) - {"provenance", "humanApproved", "untrustedContent", "action"}:
-    return result("block", "INVALID_SCHEMA")
+        return result("block", "INVALID_SCHEMA")
 
     provenance = body.get("provenance")
     human_approved = body.get("humanApproved")
